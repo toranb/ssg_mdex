@@ -1,7 +1,7 @@
 defmodule Griffin.MixProject do
   use Mix.Project
 
-  @version "0.1.0"
+  @version "0.1.1"
   @scm_url "https://github.com/toranb/ssg_mdex"
 
   def project do
@@ -71,7 +71,6 @@ defmodule Griffin.MixProject do
       main: "overview",
       logo: "logo.png",
       extra_section: "GUIDES",
-      assets: "guides/assets",
       formatters: ["html", "epub"],
       # groups_for_modules: groups_for_modules(),
       extras: extras(),
