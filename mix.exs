@@ -45,23 +45,24 @@ defmodule Griffin.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:earmark, "~> 1.4"},
-      {:file_system, "~> 1.0"},
-      {:plug_cowboy, "~> 2.6"},
+      {:mdex, "~> 0.13"},
+      {:mdex_gfm, "~> 0.2"},
+      {:file_system, "~> 1.1"},
+      {:plug_cowboy, "~> 2.9"},
       {:plug_live_reload, "~> 0.2"},
       {:slugify, "~> 1.3"},
-      {:yaml_elixir, "~> 2.9"},
+      {:yaml_elixir, "~> 2.11"},
 
       # dev dependencies
-      {:ex_doc, "~> 0.29", only: :dev, runtime: false},
-      {:makeup_html, "~> 0.1", only: :dev, runtime: false},
+      {:ex_doc, "~> 0.40", only: :dev, runtime: false},
+      {:makeup_html, "~> 0.2", only: :dev, runtime: false},
 
       # test dependencies
-      {:assertions, "~> 0.19"},
+      {:assertions, "~> 0.22"},
 
       # dev and test dependencies
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:styler, "~> 1.4", only: [:dev, :test], runtime: false}
+      {:styler, "~> 1.12", only: [:dev, :test], runtime: false}
     ]
   end
 

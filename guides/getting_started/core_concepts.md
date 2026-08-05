@@ -22,7 +22,7 @@ The answer is 10. Here are the ten brave souls:
 * Zhai Zhigang
 ```
 
-When building your website, Griffin takes files such as this and generates web pages from them using the [earmark](https://hex.pm/packages/earmark) library.
+When building your website, Griffin takes files such as this and generates web pages from them using the [MDEx](https://hex.pm/packages/mdex) library.
 
 ### Front Matter
 Front Matter is an **optional** header section written in [YAML](https://yaml.org/) that allow setting variables for a given page.

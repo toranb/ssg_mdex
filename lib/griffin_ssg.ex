@@ -112,7 +112,10 @@ defmodule GriffinSSG do
       |> then(fn content_string ->
         case Map.get(options, :content_type, ".md") do
           md when md in [".md", ".markdown"] ->
-            Earmark.as_html!(content_string)
+            [markdown: content_string, render: [unsafe: true]]
+            |> MDEx.new()
+            |> MDExGFM.attach()
+            |> MDEx.to_html!()
 
           ".eex" ->
             content_string

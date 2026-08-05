@@ -92,7 +92,7 @@ defmodule Mix.Tasks.Grf.Build do
   ## Quiet option
 
   Griffin prints out information about files that it processed, including the
-  rendering engine that processed the file (only `earmark` for now). For large
+  rendering engine that processed the file (only `markdown` for now). For large
   projects or other instances where users need minimal console output, there is
   the `--quiet` option.
 
