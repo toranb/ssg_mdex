@@ -73,6 +73,6 @@ When the data is merged in the [Data Cascade](data_cascade.html), the order of p
 In your `config.exs` configuration file, you can a mapping of aliases for layouts using the `layout_aliases` configuration key:
 
 ```elixir
-config :griffin_ssg,
+config :ssg_mdex,
   layout_aliases: %{post: "cool_layout.eex"}
 ```

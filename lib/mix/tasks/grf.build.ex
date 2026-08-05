@@ -127,7 +127,7 @@ defmodule Mix.Tasks.Grf.Build do
   ## Other options
 
   Griffin uses other configuration options that can be changed by setting
-  specific application environment keys under the `:griffin_ssg` application.
+  specific application environment keys under the `:ssg_mdex` application.
   These other options include features that cannot be passed in as a single
   CLI option like hooks, shortcodes, filters, and more.
 
@@ -146,7 +146,7 @@ defmodule Mix.Tasks.Grf.Build do
   the `:hooks` configuration key like so:
 
   ```
-  config :griffin_ssg,
+  config :ssg_mdex,
     hooks: %{
       before: [
         fn { directories, run_mode, output_mode } ->
@@ -186,7 +186,7 @@ defmodule Mix.Tasks.Grf.Build do
   YouTube videos:
 
   ```
-  config :griffin_ssg,
+  config :ssg_mdex,
     shortcodes: %{
       youtube: fn slug ->
         \"\"\"
@@ -232,7 +232,7 @@ defmodule Mix.Tasks.Grf.Build do
   configuration key:
 
   ```
-  config :griffin_ssg,
+  config :ssg_mdex,
     filters: %{
       uppercase: &String.upcase/1
     }
@@ -766,7 +766,7 @@ defmodule Mix.Tasks.Grf.Build do
   end
 
   defp get_app_env(key, default \\ nil) do
-    Application.get_env(:griffin_ssg, key, default)
+    Application.get_env(:ssg_mdex, key, default)
   end
 
   defp partials_assigns do

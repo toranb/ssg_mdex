@@ -103,7 +103,7 @@ defmodule GriffinSSG.FilesystemTest do
              ".fetch",
              "erl_crash.dump",
              "*.ez",
-             "griffin_ssg-*.tar",
+             "ssg_mdex-*.tar",
              "tmp",
              "installer/_build",
              "installer/assets",

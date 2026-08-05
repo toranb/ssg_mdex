@@ -1,12 +1,12 @@
 defmodule Griffin.MixProject do
   use Mix.Project
 
-  @version "0.4.3"
-  @scm_url "https://github.com/elixir-griffin/griffin"
+  @version "0.1.0"
+  @scm_url "https://github.com/toranb/ssg_mdex"
 
   def project do
     [
-      app: :griffin_ssg,
+      app: :ssg_mdex,
       version: @version,
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
@@ -35,7 +35,7 @@ defmodule Griffin.MixProject do
 
   defp package do
     [
-      maintainers: ["Gonçalo Tomás"],
+      maintainers: ["Toran Billups", "Gonçalo Tomás"],
       licenses: ["MIT"],
       links: %{"GitHub" => @scm_url},
       files: ~w(lib priv LICENSE.md mix.exs README.md .formatter.exs)
@@ -115,7 +115,7 @@ defmodule Griffin.MixProject do
 
   defp raise_on_archive_build(_) do
     Mix.raise("""
-    You are trying to install "griffin_ssg" as an archive, which is not supported. \
+    You are trying to install "ssg_mdex" as an archive, which is not supported. \
     You probably meant to install "grf_new" instead
     """)
   end

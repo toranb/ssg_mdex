@@ -11,7 +11,7 @@ Adding a hook can be done via `Application.put_env/4` or via the configuration f
 ```elixir
 import Config
 
-config :griffin_ssg,
+config :ssg_mdex,
   hooks: %{
     before: [
       fn {directories, _run_mode, _output_mode} ->
@@ -71,7 +71,7 @@ This feature can be used via the `--passthrough-copies` command line option, or 
 ```elixir
 import Config
 
-config :griffin_ssg,
+config :ssg_mdex,
   passthrough_copies: ["assets/**/*.js", "**/*.{png,jpeg}"]
 ```
 
@@ -103,7 +103,7 @@ Here is an example configuration declaring `tags` as a collection:
 ```elixir
 import Config
 
-config :griffin_ssg,
+config :ssg_mdex,
   collections: %{
     tags: %{
       list_layout: "list_tags",
@@ -132,7 +132,7 @@ This stage generates multiple pages according to the number of declared collecti
 Using this example, Griffin will use the layout referenced in the `list_layout` configuration key to render the `/tags/` page and the layout from the `show_layout` configuration key to render each of the `/tags/<tag>` pages. The configuration for both layouts can be set in the configuration file:
 
 ```elixir
-config :griffin_ssg,
+config :ssg_mdex,
   collections: %{
     tags: %{
       list_layout: "list_tags",
@@ -207,7 +207,7 @@ No collections pages will be written to disk if Griffin is running with the `--d
 Similarly to the `before` hooks, Griffin supports hooks that are called after the build process is complete. Hooks can be defined via application environment or via configuration file:
 
 ```elixir
-config :griffin_ssg,
+config :ssg_mdex,
   hooks: %{
     after: [
       fn {directories, results, _run_mode, _output_mode} ->

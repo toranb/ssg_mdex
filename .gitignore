@@ -20,7 +20,7 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-griffin_ssg-*.tar
+ssg_mdex-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/

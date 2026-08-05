@@ -13,7 +13,7 @@ For a movie rating website, the following collections could be defined:
 # config/config.exs
 import Config
 
-config :griffin_ssg,
+config :ssg_mdex,
   collections: %{
     cast: %{...},
     directors: %{...},
@@ -78,7 +78,7 @@ Collections can be defined in the configuration file of your application under t
 # config/config.exs
 import Config
 
-config :griffin_ssg,
+config :ssg_mdex,
   collections: %{
     "albums": %{
       permalink: "/movie/genres",

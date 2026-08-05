@@ -22,14 +22,14 @@ cd blog
 
 ### 2. Add Griffin as a dependency
 
-Edit the `mix.exs` file to include `griffin_ssg` as part of your dependencies:
+Edit the `mix.exs` file to include `ssg_mdex` as part of your dependencies:
 
 ```elixir
   defp deps do
     [
       # add the following line
       # to your list of dependencies
-      {:griffin_ssg, "~> 0.4"},
+      {:ssg_mdex, "~> 0.1"},
     ]
   end
 ```

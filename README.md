@@ -2,12 +2,11 @@
 
 > The Elixir framework for the static web.
 
-[![Build Status](https://github.com/elixir-griffin/griffin/actions/workflows/elixir.yaml/badge.svg)](https://github.com/elixir-griffin/griffin/actions/workflows/elixir.yaml)
-[![Hex.pm](https://img.shields.io/hexpm/v/griffin_ssg.svg)](https://hex.pm/packages/griffin_ssg)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-blue.svg)](https://hexdocs.pm/griffin_ssg)
-[![License](https://img.shields.io/hexpm/l/griffin_ssg.svg)](https://github.com/elixir-griffin/griffin/blob/main/LICENSE.md)
-[![Total Download](https://img.shields.io/hexpm/dt/griffin_ssg.svg)](https://hex.pm/packages/griffin_ssg)
-[![Last Updated](https://img.shields.io/github/last-commit/elixir-griffin/griffin.svg)](https://github.com/elixir-griffin/griffin/commits/main)
+[![Hex.pm](https://img.shields.io/hexpm/v/ssg_mdex.svg)](https://hex.pm/packages/ssg_mdex)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-blue.svg)](https://hexdocs.pm/ssg_mdex)
+[![License](https://img.shields.io/hexpm/l/ssg_mdex.svg)](https://github.com/toranb/ssg_mdex/blob/main/LICENSE.md)
+[![Total Download](https://img.shields.io/hexpm/dt/ssg_mdex.svg)](https://hex.pm/packages/ssg_mdex)
+[![Last Updated](https://img.shields.io/github/last-commit/toranb/ssg_mdex.svg)](https://github.com/toranb/ssg_mdex/commits/main)
 
 ## Griffin
 
@@ -17,4 +16,4 @@ Griffin is a framework for building static sites inspired by [11ty](https://www.
 
 ## Getting started
 
-Install the latest version of Griffin by following the latest instructions on the hex.pm [documentation page](https://hexdocs.pm/griffin_ssg)
+Install the latest version of Griffin by following the latest instructions on the hex.pm [documentation page](https://hexdocs.pm/ssg_mdex)

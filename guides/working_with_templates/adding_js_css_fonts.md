@@ -7,7 +7,7 @@ In your configuration file, you can add a list of files or directories to be cop
 
 ```elixir
 # config/config.exs
-config :griffin_ssg,
+config :ssg_mdex,
   passthrough_copies: ["styles.css", "bundle.js"]
 ```
 
@@ -36,7 +36,7 @@ This can be done in your configuration file, as usual:
 
 ```elixir
 # config/config.exs
-config :griffin_ssg,
+config :ssg_mdex,
   hooks: %{
     before: [
       fn _ ->

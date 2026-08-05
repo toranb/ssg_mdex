@@ -28,18 +28,18 @@ defmodule Mix.Tasks.Grf.Server do
     opts = Map.new(opts)
 
     # load code and start dependencies, including cowboy
-    {:ok, _} = Application.ensure_all_started([:griffin_ssg])
+    {:ok, _} = Application.ensure_all_started([:ssg_mdex])
 
     port = http_port(opts)
 
     input_directories =
       [
-        Application.get_env(:griffin_ssg, :input, "src"),
-        Application.get_env(:griffin_ssg, :layouts, "lib/layouts")
-      ] ++ Application.get_env(:griffin_ssg, :additional_watch_directories, [])
+        Application.get_env(:ssg_mdex, :input, "src"),
+        Application.get_env(:ssg_mdex, :layouts, "lib/layouts")
+      ] ++ Application.get_env(:ssg_mdex, :additional_watch_directories, [])
 
     live_reload_watch_dirs = [
-      ~r"#{Application.get_env(:griffin_ssg, :output, "_site")}/*"
+      ~r"#{Application.get_env(:ssg_mdex, :output, "_site")}/*"
     ]
 
     Application.put_env(:plug_live_reload, :patterns, live_reload_watch_dirs)
@@ -66,7 +66,7 @@ defmodule Mix.Tasks.Grf.Server do
   # refactor: consider having a centralized place for reading configuration values
   # that are overridable in different ways.
   def http_port(opts) do
-    Map.get(opts, :port) || Application.get_env(:griffin_ssg, :http_port) ||
+    Map.get(opts, :port) || Application.get_env(:ssg_mdex, :http_port) ||
       parse_int(System.get_env("GRIFFIN_HTTP_PORT", @default_port))
   end
 
