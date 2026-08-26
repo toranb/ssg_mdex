@@ -1,3 +1,17 @@
+# Changelog for ssg_mdex 0.2
+
+## 0.2.0
+
+### Changes
+
+- Replace the `plug_cowboy` dev server and `plug_live_reload` with `bandit` and a
+  built-in `WebSock` live-reload handler (`GriffinSSG.Web.LiveReload`). This drops
+  the transitive `cowboy`/`cowlib`/`ranch` dependencies (and their advisories)
+  entirely and moves `mix grf.server` onto a modern, pure-Elixir HTTP server.
+- Update the toolchain to Elixir 1.20.3 / Erlang OTP 29.0.5.
+
+---
+
 # Changelog for 0.4
 
 ## 0.4.3

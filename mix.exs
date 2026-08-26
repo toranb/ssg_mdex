@@ -1,14 +1,14 @@
 defmodule Griffin.MixProject do
   use Mix.Project
 
-  @version "0.1.1"
+  @version "0.2.0"
   @scm_url "https://github.com/toranb/ssg_mdex"
 
   def project do
     [
       app: :ssg_mdex,
       version: @version,
-      elixir: "~> 1.14",
+      elixir: "~> 1.20",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Griffin",
@@ -48,8 +48,9 @@ defmodule Griffin.MixProject do
       {:mdex, "~> 0.13"},
       {:mdex_gfm, "~> 0.2"},
       {:file_system, "~> 1.1"},
-      {:plug_cowboy, "~> 2.9"},
-      {:plug_live_reload, "~> 0.2"},
+      {:plug, "~> 1.15"},
+      {:bandit, "~> 1.0"},
+      {:websock_adapter, "~> 0.5"},
       {:slugify, "~> 1.3"},
       {:yaml_elixir, "~> 2.11"},
 

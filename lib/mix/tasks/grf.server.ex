@@ -2,14 +2,12 @@ defmodule Mix.Tasks.Grf.Server do
   @shortdoc "Generates a static website and listens for changes."
 
   @moduledoc """
-  Starts up a local development server using plug_cowboy.
+  Starts up a local development server using Bandit.
   The local server watches for file changes and re-runs grf.build
-  on file change, but does not reload the file in the browser.
+  on file change, then live-reloads the page in the browser.
   This server is NOT meant to be run in production.
   """
   use Mix.Task
-
-  require Logger
 
   @requirements ["app.config", "grf.build"]
   @default_port "4123"
@@ -27,7 +25,7 @@ defmodule Mix.Tasks.Grf.Server do
     {opts, _parsed} = OptionParser.parse!(args, strict: @switches, aliases: @aliases)
     opts = Map.new(opts)
 
-    # load code and start dependencies, including cowboy
+    # load code and start dependencies, including bandit
     {:ok, _} = Application.ensure_all_started([:ssg_mdex])
 
     port = http_port(opts)
@@ -38,23 +36,17 @@ defmodule Mix.Tasks.Grf.Server do
         Application.get_env(:ssg_mdex, :layouts, "lib/layouts")
       ] ++ Application.get_env(:ssg_mdex, :additional_watch_directories, [])
 
-    live_reload_watch_dirs = [
-      ~r"#{Application.get_env(:ssg_mdex, :output, "_site")}/*"
-    ]
-
-    Application.put_env(:plug_live_reload, :patterns, live_reload_watch_dirs)
-
     on_file_change_callback = fn ->
       # Can we do more clever builds here? (e.g. building only changed files)
       Mix.Tasks.Grf.Build.run([])
     end
 
     children = [
-      {Plug.Cowboy, scheme: :http, plug: GriffinSSG.Web.Plug, options: [port: port, dispatch: dispatch()]},
+      {Bandit, plug: GriffinSSG.Web.Plug, scheme: :http, port: port},
       {GriffinSSG.Filesystem.Watcher, [input_directories, on_file_change_callback]}
     ]
 
-    # disable debug logs from plug_live_reload
+    # keep the console readable during development
     Logger.configure(level: :info)
 
     Mix.shell().info("Starting webserver on http://localhost:#{port}")
@@ -73,15 +65,5 @@ defmodule Mix.Tasks.Grf.Server do
   defp parse_int(string) do
     {integer, _remainder} = Integer.parse(string)
     integer
-  end
-
-  defp dispatch do
-    [
-      {:_,
-       [
-         {"/plug_live_reload/socket", PlugLiveReload.Socket, []},
-         {:_, Plug.Cowboy.Handler, {GriffinSSG.Web.Plug, []}}
-       ]}
-    ]
   end
 end

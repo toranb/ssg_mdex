@@ -35,7 +35,6 @@ defmodule <%= @app_module %>.MixProject do
   defp deps do
     [
       <%= @griffin_dep %>,
-      {:plug_live_reload, "~> 0.1"},
       {:file_system, "~> 1.0", override: true},
     ]
   end
